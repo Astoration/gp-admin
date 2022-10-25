@@ -1,0 +1,10 @@
+.center-box{
+	text-align: center;
+	& > button{
+		display: inline-block;
+	}
+}
+
+.multiSelector{
+	margin: 10px;
+}

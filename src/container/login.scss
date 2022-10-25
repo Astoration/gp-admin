@@ -1,0 +1,52 @@
+.login-container {
+  display: inline-block;
+  width: 22em;
+  & > .header {
+    & > img {
+      width: 100%;
+    }
+    margin-bottom: 6em;
+  }
+  input[type='text'], input[type='password'] {
+    display: block;
+    width: 100%;
+    margin: 0.2em 0;
+    padding: 0.75em 1em;
+    padding-left: 3.25em;
+    box-sizing: border-box;
+    background-image: url('../image/ic_email.png');
+    background-size: auto 1.25em;
+    background-repeat: no-repeat;
+    background-position: 1em 0.825em;
+    border: none;
+    line-height: 1.5em;
+    border-bottom: 1px solid #d9d9d9;
+    &:before {
+      content: '';
+      width: 3em;
+    }
+    &:focus {
+      background-image: url('../image/ic_email_focused.png');
+    }
+  }
+  input[type='password'] {
+    background-image: url('../image/ic_password.png');
+    background-size: auto 1.5em;
+    background-position: 1.25em 0.75em;
+    &:focus {
+      background-image: url('../image/ic_password_focused.png');
+    }
+  }
+  input[type='submit'] {
+    display: block;
+    background: black;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 0.75em 2em;
+    border-radius: 0.2em;
+  }
+  .footer {
+    padding: 1.5em 0 0;
+  }
+}

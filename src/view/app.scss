@@ -1,0 +1,103 @@
+
+.data-view-list td span.red{
+  color: #f88;
+}
+
+.data-view-list td span.blue{
+  color: #88f;
+}
+
+.data-view-detail > form .form-row > .content > .Select.red > .Select-control .Select-value span{
+  color: #f88;
+}
+
+.data-view-detail > form .form-row > .content > .Select.blue > .Select-control .Select-value span{
+  color: #88f;
+}
+
+.uploadExcel{
+  display: inline-block;
+  background: white;
+  padding: 5px;
+  border: 1px solid #888;
+  margin: 0px 10px 0px 0px;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  color: #333333;
+  font-size: 18.333px;
+  font-family: 나눔바른고딕, 나눔고딕, NanumGothic,
+    Apple Gothic, 맑은 고딕, Arial, Helvetica, sans-serif;
+}
+.logout{
+   position: absolute;
+    right: 0;
+    width: 95px;
+    background: none;
+    font-size: 0.9em;
+    margin-right: 1em;
+}
+.app {
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  padding-top: 5em;
+  padding-left: 15em;
+  & > .side-menu {
+    position: absolute;
+    width: 14em;
+    top: 0;
+    left: 0em;
+    height: 100%;
+    background: white;
+    min-height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #d9d9d9;
+  }
+  & > .content {
+    min-width: 30em;
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+}
+
+input[type='text'], input[type='email'], input[type='password'],
+input[type='number'], textarea {
+  margin: 0;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  background: #fff;
+  line-height: 2em;
+  color: #666;
+  border: 1px solid #e9e9e9;
+  resize: vertical;
+  font-family: 돋움, Dotum, 굴림, Gulim, 나눔바른고딕, 나눔고딕, NanumGothic,
+    Apple Gothic, 맑은 고딕, Arial, Helvetica, sans-serif;
+  &:hover, &:focus, &:active {
+    border-color: #3397ff;
+  }
+  &[readonly] {
+    background: #eee;
+  }
+}
+
+input[type='submit'], input[type='reset'], button, a.button {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.5em;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+  line-height: 2em;
+  color: #666;
+  border: 1px solid #d9d9d9;
+  &:hover {
+    border-color: #eee;
+  }
+}

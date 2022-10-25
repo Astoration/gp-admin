@@ -1,0 +1,72 @@
+.data-view-list {
+  width: 100%;
+  border-collapse: collapse;
+  vertical-align: middle;
+  table-layout: fixed;
+  text-align: center;
+  background: white;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  & .detail {
+    // background-color: #ecebeb;
+    // font-weight: bold;
+  }
+  & .tableHeader{
+    font-weight: bold;
+    background-color: #ddd;
+  }
+  & .detail-view {
+    font-size: 1em;
+    text-align: left;
+  }
+  .select {
+    width: 2.5em;
+  }
+  & .mainField{
+    color: #77f;
+    & > .man{
+      color: blue;
+    }
+    & > .woman{
+      color: red;
+    }
+  }
+  & tr:nth-child(even){
+    background: #f3f3f3;
+  }
+  & td {
+    border: 1px solid #d9d9d9;
+    padding: 0.3em 0.5em;
+    word-break: break-all;
+    & > a {
+      display: inline;
+			text-align: left;
+      color: #666;
+      min-height: 1.2em;
+      text-decoration: none;
+      &:empty {
+        background-color: #ffe4e4;
+				display: block;
+      }
+    }
+  }
+  & thead {
+    .main {
+      font-weight: bold;
+    }
+    color: #666;
+  }
+  & tbody {
+    color: #666;
+  }
+  & .list-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  } 
+  &-add {
+    @extend .data-view-list;
+    background-color: #d9d9d9;
+  } 
+}

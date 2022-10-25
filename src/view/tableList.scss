@@ -1,0 +1,8 @@
+table.inviteTable td{
+  min-width: 150px;
+  text-align: center;
+  & input{
+    height: 30px;
+    width: auto;
+  }
+}

@@ -1,0 +1,172 @@
+@mixin triangle-left($size, $vsize, $color) {
+  width: 0;
+  height: 0;
+  border-right: $size solid $color;
+  border-left: $size solid transparent;
+  border-bottom: $vsize solid transparent;
+  border-top: $vsize solid transparent;
+}
+
+@mixin triangle-top($size, $hsize, $color) {
+  width: 0;
+  height: 0;
+  border-bottom: $size solid $color;
+  border-top: $size solid transparent;
+  border-right: $hsize solid transparent;
+  border-left: $hsize solid transparent;
+}
+
+@mixin triangle-bottom($size, $hsize, $color) {
+  width: 0;
+  height: 0;
+  border-top: $size solid $color;
+  border-bottom: $size solid transparent;
+  border-right: $hsize solid transparent;
+  border-left: $hsize solid transparent;
+}
+
+.drop-down-component {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  &>.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 9;
+  }
+  &>.button {
+    display: block;
+    cursor: pointer;
+    padding: 0 0.75em;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    line-height: 2em;
+    color: #666;
+    border: 1px solid #d9d9d9;
+    &:hover {
+      border-color: #eee;
+    }
+    & a {
+      outline: 0;
+      color: #666;
+      text-decoration: none;
+    }
+    & .title {
+      min-width: 1em;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &:after {
+      font-size: 0.8em;
+      vertical-align: middle;
+    }
+  }
+  &>.content {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 100%;
+    right: 0;
+    text-align: left;
+    background-color: #fff;
+    color: #333;
+    padding: 0.5em 0;
+    border: 1px solid #c9c9c9;
+    margin-top: 10px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 999;
+    line-height: 1em;
+    box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.5);
+    // Width should adapt to content's size - so no wraps allowed.
+    white-space: nowrap;
+    a {
+      color: #333;
+      text-decoration: none;
+      &:hover {
+        color: #444;
+        text-decoration: none;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 1.3em;
+      margin-right: -10px;
+      @include triangle-top(10px, 10px, #c9c9c9);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: -18px;
+      right: 1.3em;
+      margin-right: -9px;
+      @include triangle-top(9px, 9px, #fff);
+    }
+  }
+  &.hidden {
+    &>.button {
+      &:after {
+        opacity: 0.6;
+      }
+      & .title {
+        text-decoration: none;
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    &>.content {
+      visibility: hidden;
+      opacity: 0;
+      margin-top: 0;
+    }
+    &>.cover {
+      display: none;
+    }
+  }
+  &.top {
+    & > .content {
+      top: auto;
+      bottom: 100%;
+      margin-top: none;
+      margin-bottom: 15px;
+      &:before {
+        top: auto;
+        bottom: -20px;
+        @include triangle-bottom(10px, 10px, #c9c9c9);
+      }
+      &:after {
+        top: auto;
+        bottom: -18px;
+        @include triangle-bottom(9px, 9px, #fff);
+      }
+    }
+  }
+  &.left {
+    & > .content {
+      right: auto;
+      left: 0;
+      &:before {
+        right: auto;
+        margin-right: 0;
+        left: 1.3em;
+        margin-left: -10px;
+      }
+      &:after {
+        right: auto;
+        margin-right: 0;
+        left: 1.3em;
+        margin-left: -9px;
+      }
+    }
+  }
+}
